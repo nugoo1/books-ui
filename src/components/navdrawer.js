@@ -55,13 +55,24 @@ class TemporaryDrawer extends React.Component {
               </ListItem>
             </Link>
 
-            <Link to="/casino">
+            <Link to="/books">
               <ListItem button>
                 <h3 className="navdrawer__link">
                   <span className="navdrawer__icon navdrawer__icon2">
                     <FaBookOpen />
                   </span>
                   Books
+                </h3>
+              </ListItem>
+            </Link>
+
+            <Link to="/store">
+              <ListItem button>
+                <h3 className="navdrawer__link">
+                  <span className="navdrawer__icon navdrawer__icon3">
+                    <FaBookOpen />
+                  </span>
+                  Store
                 </h3>
               </ListItem>
             </Link>
