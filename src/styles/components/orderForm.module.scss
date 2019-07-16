@@ -1,0 +1,85 @@
+@import "../settings";
+
+.container {
+  border: 2px solid $blue;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  min-height: 60vh;
+  padding: $m-size $l-size;
+  margin-bottom: 12rem;
+}
+
+.header {
+  font-size: $font-size-xl;
+  margin: 0 auto;
+  svg {
+    cursor: pointer;
+    margin: $s-size;
+  }
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  margin-bottom: $m-size;
+  img {
+    width: 300px;
+    max-width: 50vw;
+  }
+  .book {
+    text-align: center;
+  }
+}
+
+.form {
+  padding: 0 $m-size;
+  width: 100%;
+  input {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin: $xs-size 0;
+    outline: none;
+    padding: $s-size $m-size;
+    width: 100%;
+  }
+  h4 {
+    color: $grey;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+
+  button {
+    background-color: $blue;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    padding: $s-size $l-size;
+  }
+}
+.next {
+  margin-left: auto;
+}
+
+@media only screen and (max-width: $desktop-breakpoint),
+  screen and (max-height: $mobile-portrait),
+  screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
+  .content {
+    justify-content: center;
+    flex-direction: column;
+    img {
+      margin: 0 auto;
+      width: auto;
+    }
+  }
+
+  .form {
+    margin-top: $m-size;
+  }
+}
