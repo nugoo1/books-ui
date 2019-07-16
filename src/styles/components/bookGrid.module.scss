@@ -11,6 +11,7 @@
   screen and (max-height: $mobile-portrait),
   screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
   .grid {
+    grid-gap: $l-size;      
     grid-template-columns: 1fr;
   }
 }

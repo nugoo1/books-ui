@@ -2,8 +2,10 @@
 
 .title {
     color: $blue;
+    line-height: 1.2;
     text-transform: capitalize;
     margin-top: $xl-size;
+    margin-bottom: $xs-size;
 }
 
 .subtitle {

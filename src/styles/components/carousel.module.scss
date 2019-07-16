@@ -1,0 +1,51 @@
+@import "../settings";
+
+.imageWrapper {
+  background-color: white;
+  position: relative;
+  img {
+    max-height: 50vh;
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
+  .text {
+    color: $blue;
+    font-size: $font-size-xxl;
+    font-family: Happy Ending;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    animation: fade-in;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translate(-100%, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: $desktop-breakpoint),
+  screen and (max-height: $mobile-portrait) {
+  .imageWrapper {
+    img {
+        height: 70vh;
+        object-fit: cover;
+        object-position: 50% 100%;
+      }
+    .text {
+      font-size: $font-size-l;
+    }
+  }
+}

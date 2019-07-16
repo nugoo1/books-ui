@@ -66,7 +66,7 @@ class TemporaryDrawer extends React.Component {
               </ListItem>
             </Link>
 
-            <Link to="/store">
+            <Link to="/order">
               <ListItem button>
                 <h3 className="navdrawer__link">
                   <span className="navdrawer__icon navdrawer__icon3">
