@@ -1,0 +1,15 @@
+@import "../settings";
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: $m-size;
+}
+
+@media only screen and (max-width: $desktop-breakpoint),
+  screen and (max-height: $mobile-portrait),
+  screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

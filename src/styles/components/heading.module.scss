@@ -1,0 +1,13 @@
+@import '../settings';
+
+.title {
+    color: $blue;
+    text-transform: capitalize;
+    margin-top: $xl-size;
+}
+
+.subtitle {
+    color: $grey;
+    margin-bottom: $m-size;
+}
+

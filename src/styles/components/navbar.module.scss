@@ -1,0 +1,53 @@
+@import "../settings";
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: $m-size;
+}
+
+.logo {
+  img {
+    max-width: 150px;
+  }
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  li {
+    color: $blue;
+    font-size: $font-size-xl;
+    font-family: Happy Ending, cursive, Arial, Helvetica, sans-serif;
+    margin: $s-size;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+    //   text-decoration: underline;
+    }
+  }
+
+  .action {
+    border: 2px solid $orange;
+    border-radius: 4px;
+    padding: 0 $s-size;
+  }
+}
+
+@media only screen and (max-width: $desktop-breakpoint),
+  screen and (max-height: $mobile-portrait),
+  screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
+  .navbar {
+    flex-direction: row-reverse;
+  }
+  .logo {
+    img {
+      max-width: 100px;
+    }
+  }
+
+  .links {
+    display: none;
+  }
+}

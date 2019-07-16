@@ -1,0 +1,21 @@
+@import "../settings";
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.layout {
+  margin: 0 auto;
+  max-width: $layout;
+}
+
+
+@media only screen and (max-width: $desktop-breakpoint),
+screen and (max-height: $mobile-portrait), 
+ screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
+  .layout {
+      max-width: $mobile-layout;
+  }
+}

@@ -1,0 +1,58 @@
+// Colors
+$black: #010203;
+$grey: #333333;
+$white: #f9f9f9;
+$pink: #ff7979;
+$orange: #f0932b;
+$blue: #22a6b3;
+$light-blue: #c7ecee;
+$dark-brown: rgb(51, 15, 11);
+
+// Font Size
+$font-size-xxl: 5rem;
+$font-size-xl: 3.1rem;
+$font-size-l: 2.8rem;
+$font-size-m: 2rem;
+$font-size-s: 1.6rem;
+$font-size-xs: 1.2rem;
+$font-size-xxs: 1rem;
+$font-size-xxxs: 0.8rem;
+
+// Spacing
+$xs-size: 0.8rem;
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+$xxl-size: 7.5rem;
+$desktop-breakpoint: 45rem;
+$tablet-breakpoint: 64rem;
+$mobile-portrait: 26rem;
+$layout: 80%;
+$mobile-layout: 80%;
+
+// Mixins
+@mixin bg-gradient {
+  background: #74ebd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #acb6e5,
+    #74ebd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #acb6e5,
+    #74ebd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+// Fonts
+@font-face {
+  font-family: "Happy Ending";
+  src: url("/fonts/Happy_Ending.ttf");
+}
+
+@font-face {
+  font-family: "Whitelist";
+  src: url("/fonts/Whitelist.otf");
+}
