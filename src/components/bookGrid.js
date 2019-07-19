@@ -6,7 +6,7 @@ import { connect } from "react-redux"
 // Styles
 import styles from "../styles/components/bookGrid.module.scss"
 // Images
-import image from '../assets/images/no_image.png'
+import image from "../assets/images/no_image.png"
 
 const BookGrid = ({ books, setBooks, search, clearBooks }) => {
   const [error, setError] = useState("")
@@ -19,6 +19,9 @@ const BookGrid = ({ books, setBooks, search, clearBooks }) => {
         const res = await axios.get(
           `https://www.googleapis.com/books/v1/volumes?q=${search}&max-results=20`
         )
+        if (!res.data.items) {
+          throw new Error(`No results found for "${search}"`)
+        }
         const books = await res.data.items.map(
           ({ volumeInfo, id, searchInfo }) => ({
             id: id,
@@ -26,8 +29,12 @@ const BookGrid = ({ books, setBooks, search, clearBooks }) => {
             description: searchInfo ? searchInfo.textSnippet : "No description",
             authors: volumeInfo.authors,
             publisher: volumeInfo.publisher,
-            image: volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail.replace("zoom=1", "zoom=2") : image,
-            thumbnail: volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail : image,
+            image: volumeInfo.imageLinks
+              ? volumeInfo.imageLinks.thumbnail.replace("zoom=1", "zoom=2")
+              : image,
+            thumbnail: volumeInfo.imageLinks
+              ? volumeInfo.imageLinks.smallThumbnail
+              : image,
           })
         )
         setBooks(books)
