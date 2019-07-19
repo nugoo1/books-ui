@@ -22,10 +22,10 @@ const navbar = () => {
         <Link to="/">
           <li>Home</li>
         </Link>
-        <Link to="/">
+        <Link to="/books">
           <li>Books</li>
         </Link>
-        <Link to="/">
+        <Link to="/order">
           <li className={styles.action}>Order Now</li>
         </Link>
       </ul>
