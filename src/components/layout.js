@@ -7,10 +7,11 @@ import Footer from "./footer"
 // Styles
 import styles from "../styles/components/layout.module.scss"
 
-const Layout = ({ children }) => (
+const Layout = ({ children, slider }) => (
   <div className={styles.wrapper}>
+    <Navbar />
+    {slider && slider}
     <div className={styles.layout}>
-      <Navbar />
       <main>{children}</main>
     </div>
     <div className={styles.footer}>

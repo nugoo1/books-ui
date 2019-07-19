@@ -6,9 +6,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout slider={<Landing />}>
     <SEO title="Home" />
-    <Landing />
+    
     <Heading
       title="Welcome to our Online Book Store"
       subtitle="There is more treasure in books than in all the pirate’s loot on Treasure Island."

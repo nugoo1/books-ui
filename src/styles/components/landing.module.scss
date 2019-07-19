@@ -1,18 +1,21 @@
 @import "../settings";
 
 .wrapper {
+  background-position-y: 100%;
+  background-size: cover;
   color: white;
-  margin-top: $l-size;
-  min-height: 50vh;
+  margin-top: $m-size;
+  min-height: 60vh;
   position: relative;
-  width: 100%;
+  width: 100vw;
   &::before {
     background-color: $blue;
+    clip-path: inset(8% 0%);
     content: "";
     height: 100%;
+    left: 0;
     position: absolute;
-    width: 95%;
-    left: 10px;
+    width: 100%;
     z-index: -2;
   }
 }
@@ -29,7 +32,7 @@
     padding: $s-size $l-size;
     transition: all 0.15s ease-in-out;
     &:hover {
-        color: lighten($blue, 10%);
+      color: lighten($blue, 10%);
     }
   }
 }
@@ -41,22 +44,36 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+.search {
+  margin: $m-size 0;
+  .form {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  input,
+  button {
+    background-color: white;
+    border: none;
+    height: 40px;
+    outline: none;
+    padding: $s-size $m-size;
+  }
+  button {
+    color: $blue;
+  }
 
-.image {
-  bottom: 0;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  transform: translate(-50%, 0%);
-  z-index: -1;
+}
+
+.error {
+  font-style: italic;
 }
 
 @media only screen and (max-width: $desktop-breakpoint),
   screen and (max-height: $mobile-portrait),
   screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
   .content {
+    margin: $m-size 0;
     width: 80%;
   }
   .buttons2 {
@@ -64,13 +81,8 @@
   }
 
   .buttons1 {
-      button {
-          margin-top: $s-size;
-      }
-  }
-
-  
-.image {
-    object-position: 8%;
+    button {
+      margin-top: $s-size;
+    }
   }
 }

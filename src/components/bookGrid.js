@@ -6,17 +6,16 @@ import { connect } from "react-redux"
 // Styles
 import styles from "../styles/components/bookGrid.module.scss"
 
-const BookGrid = ({ books, setBooks }) => {
+const BookGrid = ({ books, setBooks, search }) => {
   const [error, setError] = useState("")
 
-  // Run API Call to get Books
+  // Run API Call to get books on initial mount
   useEffect(() => {
     // The Google API returned tiny images for both thumbnail and small thumbnail, the str.replace() method is used to fix it
-    // Google API sometimes returns 403 Forbidden with exceeded usage
     const fetchBooks = async () => {
       try {
         const res = await axios.get(
-          "https://www.googleapis.com/books/v1/volumes?q=coloring%20books&max-results=20"
+          `https://www.googleapis.com/books/v1/volumes?q=${search}&max-results=20`
         )
         const books = await res.data.items.map(({ volumeInfo, id, searchInfo }) => ({
           id: id,
@@ -33,19 +32,17 @@ const BookGrid = ({ books, setBooks }) => {
       }
     }
     fetchBooks()
-
     return () => {
       setError("")
     }
-  }, [])
+  }, [search])
 
   return (
     <div className={styles.grid}>
       {books.map((book, idx) => (
         <BookItem key={idx} book={book} />
       ))}
-      {error && <p className={styles.error}>{error}. Please Try Again..</p>}
-      
+      {error && <p className={styles.error}>{error}. Please Try Again..</p>}      
     </div>
   )
 }
@@ -53,6 +50,7 @@ const BookGrid = ({ books, setBooks }) => {
 const mapStateToProps = state => {
   return {
     books: state.books,
+    search: state.search
   }
 }
 

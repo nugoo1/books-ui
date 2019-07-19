@@ -1,10 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Navdrawer from "./navdrawer"
 
 // Images
-import logo from "../images/logo-2x.png"
+import logo from "../assets/images/logo-2x.png"
 
 // Styles
 import styles from "../styles/components/navbar.module.scss"

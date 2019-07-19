@@ -7,7 +7,7 @@ import ListItem from "@material-ui/core/ListItem"
 import { Link } from "gatsby"
 
 // Images
-import logoImage from "../images/logo.png"
+import logoImage from "../assets/images/logo.png"
 
 import {
   FaHome,

@@ -4,7 +4,9 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
   margin-top: $m-size;
+  max-width: $layout;
 }
 
 .logo {

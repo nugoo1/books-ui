@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { FaAddressCard, FaEnvelope, FaBirthdayCake } from "react-icons/fa"
 import { connect } from "react-redux"
+import { navigate } from "gatsby"
 import { withFormik, Form, Field } from "formik"
 import * as Yup from "yup"
 
@@ -25,6 +26,7 @@ const OrderForm = ({
     submitForm({
       ...values,
     })
+    navigate("/checkout")
     resetForm()
   }
   return (
@@ -60,7 +62,10 @@ const OrderForm = ({
             {touched.name && errors.name && (
               <p className={styles.error}>{errors.name}</p>
             )}
-            <Field type="name" name="name" placeholder="Name" />
+            <label>
+              Name
+              <Field type="name" name="name" placeholder="Name" />
+            </label>
           </div>
           <div
             style={step !== 2 ? { display: "none" } : {}}
@@ -69,7 +74,11 @@ const OrderForm = ({
             {touched.email && errors.email && (
               <p className={styles.error}>{errors.email}</p>
             )}
+            <label>
+              Email
             <Field type="email" name="email" placeholder="Email" />
+            </label>
+
           </div>
           <div
             style={step !== 3 ? { display: "none" } : {}}
@@ -80,7 +89,11 @@ const OrderForm = ({
             {touched.dob && errors.dob && (
               <p className={styles.error}>{errors.dob}</p>
             )}
+            <label>
+              Date of Birth
             <Field type="date" name="dob" placeholder="Date of Birth" />
+            </label>
+
           </div>
           {/* Controls */}
           <div className={styles.footer}>

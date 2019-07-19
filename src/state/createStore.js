@@ -21,18 +21,21 @@ const reducer = (state, action) => {
         category: action.category,
       }
     case `SUBMIT_FORM`:
-      navigate("/checkout")
-      console.log(action.userInfo)
       return {
         ...state,
         userInfo: action.userInfo,
+      }
+    case `SEARCH`:
+      return {
+        ...state,
+        search: action.searchInput
       }
     default:
       return state
   }
 }
 
-const initialState = { books: [], book: "", category: "", userInfo: {} }
+const initialState = { books: [], book: "", category: "", userInfo: {}, search: "" }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore
