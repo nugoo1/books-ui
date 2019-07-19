@@ -11,32 +11,26 @@ const OrderSummary = ({ userInfo, book, category }) => (
     <div className={styles.content}>
       {book && <BookItem book={book} />}
 
-        <div className={styles.userInfo}>
-            
-          <h6>Book Type</h6>
-          <p>{category ? category: "Not selected"}</p>
-
-          {userInfo && (
-              <div> <h6>Name</h6>
-              <p>{userInfo.name}</p>
-    
-              <h6>Email</h6>
-              <p>{userInfo.email}</p>
-    
-              <h6>Date of Birth</h6>
-              <p>{userInfo.dob}</p>
-                  </div>
-           
-          )}
-
-          
-        </div>
+      <div className={styles.userInfo}>
+        {userInfo && (
+          <div>
+            <h6>Name</h6>
+            <p>{userInfo.name}</p>
+            <h6>Email</h6>
+            <p>{userInfo.email}</p>
+            <h6>Date of Birth</h6>
+            <p>{userInfo.dob}</p>
+          </div>
+        )}
+      </div>
     </div>
     <div className={styles.footer}>
-      <button onClick={() => {
+      <button
+        onClick={() => {
           alert("Thank You. Please Come Again!")
-          navigate('/')
-      }}>
+          navigate("/")
+        }}
+      >
         Confirm
       </button>
     </div>

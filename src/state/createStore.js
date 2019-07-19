@@ -9,7 +9,7 @@ const reducer = (state, action) => {
         books: action.books,
       }
     case `SELECT_BOOK`:
-      navigate("/books")
+      navigate("/order")
       return {
         ...state,
         book: action.id,
