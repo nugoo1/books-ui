@@ -8,23 +8,28 @@ import styles from "../styles/components/orderSummary.module.scss"
 const OrderSummary = ({ userInfo, book, category }) => (
   <div className={styles.container}>
     <div className={styles.content}>
-      <BookItem book={book} />
+      {book && <BookItem book={book} />}
+
       <div className={styles.userInfo}>
         <h6>Book Type</h6>
-        <p>{category}</p>
+        <p>{category ? category : "Not selected"}</p>
 
-        <h6>Name</h6>
-        <p>{userInfo.name}</p>
-
-        <h6>Email</h6>
-        <p>{userInfo.email}</p>
-
-        <h6>Date of Birth</h6>
-        <p>{userInfo.dob}</p>
+        {userInfo && (
+          <div>
+            <h6>Name</h6>
+            <p>{userInfo.name}</p>
+            <h6>Email</h6>
+            <p>{userInfo.email}</p>
+            <h6>Date of Birth</h6>
+            <p>{userInfo.dob}</p>
+          </div>
+        )}
       </div>
     </div>
     <div className={styles.footer}>
-      <button onClick={() => alert("Thank You. Please Come Again!")}>Confirm</button>
+      <button onClick={() => alert("Thank You. Please Come Again!")}>
+        Confirm
+      </button>
     </div>
   </div>
 )

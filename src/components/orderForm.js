@@ -43,11 +43,14 @@ const OrderForm = ({
         />
       </div>
       <div className={styles.content}>
-        <div className={styles.book}>
-          <img src={book.image} alt="Book" />
-          <h4>{book.title}</h4>
-          <p>{book.description}</p>
-        </div>
+        {book && (
+          <div className={styles.book}>
+            <img src={book.image} alt="Book" />
+
+            <h4>{book.title}</h4>
+            <p>{book.description}</p>
+          </div>
+        )}
 
         <Form className={styles.form} onSubmit={handleSubmit}>
           {/* Step 1 */}
