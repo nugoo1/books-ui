@@ -1,0 +1,41 @@
+@import "../settings";
+
+.visible,
+.invisible {
+  background-color: $blue;
+  border-radius: 4px;
+  bottom: $xs-size;
+  color: white;
+  cursor: pointer;
+  padding: $m-size;
+  position: fixed;
+  right: $l-size;
+}
+
+.visible {
+  animation: fade-in 0.35s forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.invisible {
+  animation: fade-out 0.35s forwards;
+  opacity: 1;
+  z-index: -10;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

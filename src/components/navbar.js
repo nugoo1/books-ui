@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Navdrawer from "./navdrawer"
+import Scroll from './scrollToTop'
 
 // Images
 import logo from "../assets/images/logo-2x.png"
@@ -29,6 +30,7 @@ const navbar = () => {
         </Link>
       </ul>
       <Navdrawer />
+      <Scroll />
     </div>
   )
 }

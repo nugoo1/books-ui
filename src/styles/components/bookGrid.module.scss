@@ -4,13 +4,22 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: $l-size;
-  margin-bottom: $xxl-size;
+  margin-bottom: $l-size;
 }
 
 .error {
   color: $orange;
   font-style: italic;
   font-weight: bold;
+}
+
+.messages {
+  margin-bottom: $xxl-size;
+  text-align: center;
+}
+
+.end {
+  color: lighten($grey, 10%);
 }
 
 @media only screen and (max-width: $desktop-breakpoint),

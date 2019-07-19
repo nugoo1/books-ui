@@ -23,6 +23,16 @@ const OrderForm = ({
   const [step, setStep] = useState(1)
   const handleSubmit = e => {
     e.preventDefault()
+    if (
+      !values.name ||
+      !values.email ||
+      !values.dob ||
+      errors.name ||
+      errors.email ||
+      errors.dob
+    ) {
+      return
+    }
     submitForm({
       ...values,
     })
@@ -64,7 +74,12 @@ const OrderForm = ({
             )}
             <label>
               Name
-              <Field type="name" name="name" placeholder="Name" focused="true"/>
+              <Field
+                type="name"
+                name="name"
+                placeholder="Name"
+                focused="true"
+              />
             </label>
           </div>
           <div
@@ -76,9 +91,8 @@ const OrderForm = ({
             )}
             <label>
               Email
-            <Field type="email" name="email" placeholder="Email" />
+              <Field type="email" name="email" placeholder="Email" />
             </label>
-
           </div>
           <div
             style={step !== 3 ? { display: "none" } : {}}
@@ -91,9 +105,8 @@ const OrderForm = ({
             )}
             <label>
               Date of Birth
-            <Field type="date" name="dob" placeholder="Date of Birth" />
+              <Field type="date" name="dob" placeholder="Date of Birth" />
             </label>
-
           </div>
           {/* Controls */}
           <div className={styles.footer}>
@@ -118,14 +131,17 @@ const OrderForm = ({
             <button
               type="submit"
               className={
-                errors.name || errors.email || errors.dob
+                isSubmitting ||
+                errors.name ||
+                errors.email ||
+                errors.dob ||
+                !values.name ||
+                !values.email ||
+                !values.dob
                   ? styles.disabled
                   : styles.confirm
               }
               style={step !== 3 ? { display: "none" } : {}}
-              disabled={
-                isSubmitting || errors.name || errors.email || errors.dob
-              }
             >
               Confirm
             </button>

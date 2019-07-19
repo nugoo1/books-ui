@@ -94,7 +94,7 @@ class TemporaryDrawer extends React.Component {
         </div>
         <Drawer
           classes={{ paper: classes.paper }}
-          anchor="right"
+          anchor="left"
           open={this.state.right}
           onClose={this.toggleDrawer("right", false)}
         >

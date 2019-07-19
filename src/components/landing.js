@@ -5,10 +5,6 @@ import { FaSearch } from "react-icons/fa"
 import { connect } from "react-redux"
 // Styles
 import styles from "../styles/components/landing.module.scss"
-// Images
-import bg1 from "../assets/images/bg1.png"
-import bg2 from "../assets/images/bg2.png"
-
 
 const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
   const handleSubmit = e => {
@@ -20,7 +16,9 @@ const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
     startSearch(values.search)
     resetForm()
   }
-
+  const handleButtonClick = search => {
+    startSearch(search)
+  }
   return (
     <div className={styles.wrapper}>
       {/* <img className={styles.image} src={bg1} alt=""/> */}
@@ -30,12 +28,12 @@ const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
           Choose from over 140,000 stories, colouring books, e-books and more!
         </p>
         <div className={styles.buttons1}>
-          <button>Story Books</button>
-          <button>Educational Books</button>
+          <button onClick={() => handleButtonClick("story%20book")}>Story Books</button>
+          <button onClick={() => handleButtonClick("educational%20book")}>Educational Books</button>
         </div>
         <div className={styles.buttons2}>
-          <button>Colouring Books</button>
-          <button>E Books</button>
+          <button onClick={() => handleButtonClick("coloring%20book")}>Colouring Books</button>
+          <button onClick={() => handleButtonClick("e-book")}>E Books</button>
         </div>
         <div className={styles.search}>
           {touched.search && errors.search && (
@@ -55,7 +53,6 @@ const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
 
 const mapDispatchToProps = dispatch => ({
   startSearch: searchInput => dispatch({ type: `SEARCH`, searchInput }),
-
 })
 
 export default withFormik({

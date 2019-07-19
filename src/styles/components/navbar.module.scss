@@ -48,7 +48,7 @@
   screen and (max-height: $mobile-portrait),
   screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
   .navbar {
-    flex-direction: row-reverse;
+    // flex-direction: row;
   }
   .logo {
     img {

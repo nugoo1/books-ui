@@ -50,11 +50,18 @@ const BookGrid = ({ books, setBooks, search, clearBooks }) => {
   }, [search])
 
   return (
-    <div className={styles.grid}>
-      {books.map((book, idx) => (
-        <BookItem key={idx} book={book} />
-      ))}
-      {error && <p className={styles.error}>{error}. Please Try Again..</p>}
+    <div>
+      <div className={styles.grid}>
+        {books.map((book, idx) => (
+          <BookItem key={idx} book={book} />
+        ))}
+      </div>
+      <div className={styles.messages}>
+        {!error && books.length > 0 && (
+          <h6 className={styles.end}>- End of Results -</h6>
+        )}
+        {error && <p className={styles.error}>{error}. Please Try Again..</p>}
+      </div>
     </div>
   )
 }
