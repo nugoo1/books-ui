@@ -10,7 +10,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     
     <Heading
-      title="Welcome to our Online Book Store"
+      title="Welcome to our online book store"
       subtitle="There is more treasure in books than in all the pirate’s loot on Treasure Island."
     />
     <BookGrid />

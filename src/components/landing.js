@@ -7,6 +7,8 @@ import { connect } from "react-redux"
 import styles from "../styles/components/landing.module.scss"
 // Images
 import bg1 from "../assets/images/bg1.png"
+import bg2 from "../assets/images/bg2.png"
+
 
 const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
   const handleSubmit = e => {
@@ -20,7 +22,7 @@ const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
   }
 
   return (
-    <div className={styles.wrapper} style={{ backgroundImage: `url(${bg1})` }}>
+    <div className={styles.wrapper}>
       {/* <img className={styles.image} src={bg1} alt=""/> */}
       <div className={styles.content}>
         <h1>The Treasure Trove of Online Books</h1>

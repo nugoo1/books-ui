@@ -40,7 +40,7 @@ const reducer = (state, action) => {
   }
 }
 
-const initialState = { books: [], book: "", category: "", userInfo: {}, search: "cinderella" }
+const initialState = { books: [], book: "", category: "", userInfo: {}, search: "zoo" }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore
