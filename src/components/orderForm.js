@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { FaAddressCard, FaEnvelope, FaBirthdayCake } from "react-icons/fa"
 import { connect } from "react-redux"
-import { navigate } from "gatsby"
 import { withFormik, Form, Field } from "formik"
 import * as Yup from "yup"
 
