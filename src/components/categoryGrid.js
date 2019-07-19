@@ -1,6 +1,5 @@
 import React from "react"
 import CategoryItem from "./categoryItem"
-import Heading from "./heading"
 
 // Styles
 import styles from "../styles/components/categoryGrid.module.scss"
@@ -8,7 +7,7 @@ import styles from "../styles/components/categoryGrid.module.scss"
 const categories = [
   {
     id: "1",
-    title: "Story Books",
+    title: "ABC Story",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.",
     image:
@@ -16,7 +15,7 @@ const categories = [
   },
   {
     id: "2",
-    title: "Colouring Books",
+    title: "ABC Coloring",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.",
     image:
@@ -24,14 +23,14 @@ const categories = [
   },
   {
     id: "3",
-    title: "Story E-Books",
+    title: "ABC e-Book",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.",
     image: "https://rukminim1.flixcart.com/image/832/832/jg15aq80/book/3/4/9/fairy-tales-story-books-for-kids-great-fairy-tales-pinocchio-original-imaf4d7qz8cfjjkh.jpeg?q=70",
   },
   {
     id: "4",
-    title: "Colouring E-Books",
+    title: "ABC e-Coloring",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.",
     image:

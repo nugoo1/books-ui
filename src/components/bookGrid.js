@@ -1,49 +1,68 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import BookItem from "./bookItem"
+import axios from "axios"
+import { connect } from "react-redux"
 
 // Styles
 import styles from "../styles/components/bookGrid.module.scss"
 
-const books = [
-  {
-    id: "1",
-    title: "Princess Poko",
-    published: "2005",
-    author: "Peach Fuzz",
-    image: "http://static.bedtimez.com/wp-content/uploads/2017/01/04102439/Charlottes-Web.jpg",
-  },
-  {
-    id: "2",
-    title: "My Friend Totoro",
-    published: "1998",
-    author: "Totoro San",
-    image: "https://images.unsplash.com/photo-1561383507-2777ad5d74a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
-  },
-  {
-    id: "3",
-    title: "Bears and Pandas",
-    published: "2015",
-    author: "Mary Poppers",
-    image: "https://m.media-amazon.com/images/I/71tWaxdJNWL._AC_UL436_.jpg",
-  },
-  {
-    id: "4",
-    title: "Sharing is Caring",
-    published: "2009",
-    author: "Mindy Jones",
-    image: "https://d1xfgk3mh635yx.cloudfront.net/sites/default/files/styles/original/public/image/featured/1017351-wgbh-options-best-selling-children-s-series-pinkalicious.jpg?itok=WvIE9Haa",
-  },
-]
+const BookGrid = ({ books, setBooks }) => {
+  const [error, setError] = useState("")
 
-const BookGrid = () => (
-  <div className={styles.grid}>
-    {books.map((book, idx) => (
-      <BookItem key={idx} book={book} />
-    ))}
-    {books.map((book, idx) => (
-      <BookItem key={idx} book={book} />
-    ))}
-  </div>
-)
+  // Run API Call to get Books
+  useEffect(() => {
+    // The Google API returned tiny images for both thumbnail and small thumbnail, the str.replace() method is used to fix it
+    // Google API sometimes returns 403 Forbidden with exceeded usage
+    const fetchBooks = async () => {
+      try {
+        const res = await axios.get(
+          "https://www.googleapis.com/books/v1/volumes?q=coloring%20books&max-results=20"
+        )
+        const books = await res.data.items.map(({ volumeInfo, id, searchInfo }) => ({
+          id: id,
+          title: volumeInfo.title,
+          description: searchInfo.textSnippet,
+          authors: volumeInfo.authors,
+          publisher: volumeInfo.publisher,
+          image: volumeInfo.imageLinks.thumbnail.replace("zoom=1", "zoom=2"),
+          thumbnail: volumeInfo.imageLinks.smallThumbnail,
+        }))
+        setBooks(books)
+      } catch (e) {
+        setError(e.message)
+      }
+    }
+    fetchBooks()
 
-export default BookGrid
+    return () => {
+      setError("")
+    }
+  }, [])
+
+  return (
+    <div className={styles.grid}>
+      {books.map((book, idx) => (
+        <BookItem key={idx} book={book} />
+      ))}
+      {error && <p className={styles.error}>{error}. Please Try Again..</p>}
+      
+    </div>
+  )
+}
+
+const mapStateToProps = state => {
+  return {
+    books: state.books,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setBooks: books => dispatch({ type: `SET_BOOKS`, books }),
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BookGrid)

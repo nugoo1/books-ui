@@ -29,12 +29,13 @@
   }
   .book {
     text-align: center;
+    p {
+      color: $grey;
+    }
   }
 }
 
-.form {
-  padding: 0 $m-size;
-  width: 100%;
+.formField {
   input {
     border: 1px solid lightgrey;
     border-radius: 8px;
@@ -43,6 +44,11 @@
     padding: $s-size $m-size;
     width: 100%;
   }
+}
+
+.form {
+  padding: 0 $m-size;
+  width: 100%;
   h4 {
     color: $grey;
   }
@@ -63,8 +69,20 @@
     padding: $s-size $l-size;
   }
 }
-.next {
+.next,
+.confirm {
   margin-left: auto;
+}
+
+.disabled {
+  background-color: $pink !important;
+  cursor: not-allowed !important;
+}
+
+.error {
+  color: $pink;
+  font-style: italic;
+  font-size: $font-size-xs;
 }
 
 @media only screen and (max-width: $desktop-breakpoint),

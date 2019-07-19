@@ -1,0 +1,52 @@
+@import '../settings';
+
+.container {
+    border: 2px solid $blue;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+    padding: $l-size $l-size;
+    margin-bottom: 12rem;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: $m-size;
+  }
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+  
+    button {
+      background-color: $blue;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      cursor: pointer;
+      margin-left: auto;
+      outline: none;
+      padding: $s-size $l-size;
+    }
+  }
+
+@media only screen and (max-width: $desktop-breakpoint),
+screen and (max-height: $mobile-portrait), 
+ screen and (max-width: $tablet-breakpoint) and (min-height: $tablet-breakpoint) {
+  .order {
+      flex-direction: column-reverse;
+  }
+  .content {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .userInfo {
+      align-self: flex-start;
+      margin-top: $m-size;
+  }
+}

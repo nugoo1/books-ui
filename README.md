@@ -4,6 +4,6 @@
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
   </a>
 </p>
-<h1 align="center">
+<p align="center">
   This was Build Using Gatsby's default starter by @Nugoo 🚀
-</h1>
+</p>

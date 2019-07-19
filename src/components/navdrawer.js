@@ -55,7 +55,7 @@ class TemporaryDrawer extends React.Component {
               </ListItem>
             </Link>
 
-            <Link to="/books">
+            <Link to="/">
               <ListItem button>
                 <h3 className="navdrawer__link">
                   <span className="navdrawer__icon navdrawer__icon2">
@@ -66,7 +66,7 @@ class TemporaryDrawer extends React.Component {
               </ListItem>
             </Link>
 
-            <Link to="/order">
+            <Link to="/">
               <ListItem button>
                 <h3 className="navdrawer__link">
                   <span className="navdrawer__icon navdrawer__icon3">
