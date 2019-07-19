@@ -64,7 +64,7 @@ const OrderForm = ({
             )}
             <label>
               Name
-              <Field type="name" name="name" placeholder="Name" />
+              <Field type="name" name="name" placeholder="Name" focused="true"/>
             </label>
           </div>
           <div

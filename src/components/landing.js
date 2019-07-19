@@ -11,8 +11,10 @@ import bg1 from "../assets/images/bg1.png"
 const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
   const handleSubmit = e => {
     e.preventDefault()
-    if (!values.search || errors.search)
-      return console.log(errors.search || "No search value")
+    if (!values.search || errors.search) {
+      console.log(errors.search || "No search value")
+      return
+    }
     startSearch(values.search)
     resetForm()
   }
@@ -51,6 +53,7 @@ const Landing = ({ errors, touched, values, resetForm, startSearch }) => {
 
 const mapDispatchToProps = dispatch => ({
   startSearch: searchInput => dispatch({ type: `SEARCH`, searchInput }),
+
 })
 
 export default withFormik({

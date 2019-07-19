@@ -30,12 +30,17 @@ const reducer = (state, action) => {
         ...state,
         search: action.searchInput
       }
+    case `CLEAR_BOOKS`:
+      return {
+        ...state,
+        books: []
+      }
     default:
       return state
   }
 }
 
-const initialState = { books: [], book: "", category: "", userInfo: {}, search: "" }
+const initialState = { books: [], book: "", category: "", userInfo: {}, search: "cinderella" }
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore
