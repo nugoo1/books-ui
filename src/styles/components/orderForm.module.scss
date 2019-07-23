@@ -48,7 +48,8 @@
 
 .form {
   display: flex;
-  flex-direction: column;padding: 0 $m-size;
+  flex-direction: column;
+  padding: 0 $m-size;
   width: 100%;
   h4 {
     color: $grey;
@@ -67,6 +68,11 @@
     cursor: pointer;
     outline: none;
     padding: $s-size $l-size;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+      transform: translateY(2px);
+      box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  }
   }
 }
 .next,

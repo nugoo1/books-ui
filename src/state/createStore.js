@@ -9,7 +9,7 @@ const reducer = (state, action) => {
         books: action.books,
       }
     case `SELECT_BOOK`:
-      navigate("/order")
+      navigate("/books")
       return {
         ...state,
         book: action.id,
@@ -28,19 +28,26 @@ const reducer = (state, action) => {
     case `SEARCH`:
       return {
         ...state,
-        search: action.searchInput
+        search: action.searchInput,
       }
     case `CLEAR_BOOKS`:
       return {
         ...state,
-        books: []
+        books: [],
       }
     default:
       return state
   }
 }
 
-const initialState = { books: [], book: "", category: "", userInfo: {}, search: "zoo" }
+const initialState = {
+  books: [],
+  book: "",
+  category: "",
+  userInfo: {},
+  search: "zoo",
+  categories: ["Story", "Coloring", "e-Book", "e-Coloring"],
+}
 
 const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore

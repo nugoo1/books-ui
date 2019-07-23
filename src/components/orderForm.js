@@ -12,10 +12,12 @@ const yes = "#22a6b3"
 const no = "#f0932b"
 
 const OrderForm = ({
+  book,
+  category,
+  // Formik
   errors,
   touched,
   isSubmitting,
-  book,
   submitForm,
   values,
   resetForm,
@@ -57,8 +59,7 @@ const OrderForm = ({
         {book && (
           <div className={styles.book}>
             <img src={book.image} alt="Book" />
-
-            <h4>{book.title}</h4>
+            <h4>{`${book.title} ${category}`}</h4>
             <p>{book.description}</p>
           </div>
         )}
@@ -155,6 +156,7 @@ const OrderForm = ({
 const mapStateToProps = state => {
   return {
     book: state.books.find(book => book.id === state.book),
+    category: state.category
   }
 }
 
