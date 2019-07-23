@@ -41,3 +41,10 @@
     }
   }
 }
+
+
+@media (hover: none) {
+  .category:hover {
+    transform: none;
+  }
+}

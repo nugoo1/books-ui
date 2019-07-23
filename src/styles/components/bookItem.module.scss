@@ -32,3 +32,9 @@
     }
   }
 }
+
+@media (hover: none) {
+  .book:hover {
+    transform: none;
+  }
+}
