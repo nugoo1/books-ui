@@ -11,7 +11,7 @@ const IndexPage = () => (
     <SEO title="Books" />
     <Heading title="Books for every occasion" subtitle="The more that you read, the more things you will know. The more you learn, the more places you’ll go."/>    
     <CategoryGrid />
-    <Heading title="Free e-book with every purchase" subtitle="Every book purchase will receive a free full story book audio mp3"/>
+    <Heading title="Don't you just love reading?" subtitle="Every book purchase will receive a free gift!"/>
     <Player />
   </Layout>
 )
